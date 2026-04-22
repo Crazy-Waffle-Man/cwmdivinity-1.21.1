@@ -2,8 +2,11 @@ package com.crazy_waffle_man.divinity.item;
 
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.commands.AttributeCommand;
 import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -11,6 +14,7 @@ import net.minecraft.world.item.TooltipFlag;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class GodWand extends Item {
     private static ArrayList<Entity> doomedEntities;
@@ -32,9 +36,13 @@ public class GodWand extends Item {
     @Override
     public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity) {
         stack.hurtAndBreak(1, player, player.getEquipmentSlotForItem(stack)); // damage the item
-        doomedEntities.add(entity);
-        //TODO Set the entity's speed to 0 here
-        entity.hurt(player.damageSources().freeze(), 1);
+        if (entity instanceof LivingEntity) {
+            Objects.requireNonNull(
+                    ((LivingEntity) entity)
+                            .getAttributes()
+                            .getInstance(Attributes.MOVEMENT_SPEED)
+            ).setBaseValue(0.0);
+        }
         return true;
     }
 
