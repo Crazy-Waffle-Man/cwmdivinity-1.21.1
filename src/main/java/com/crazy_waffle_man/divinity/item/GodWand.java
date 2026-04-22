@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class GodWand extends Item {
-    private static ArrayList<Entity> doomedEntities;
 
     public GodWand(Properties properties) {
         super(properties);
@@ -48,5 +47,6 @@ public class GodWand extends Item {
 
     public static void tickDoomedEntities() {
         //TODO Iterate through doomedEntities and drag them underground until their eyes are underground (suffocating)
+
     }
 }
