@@ -1,6 +1,7 @@
 package com.crazy_waffle_man.divinity;
 
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
@@ -26,6 +27,9 @@ public class Config {
 //            .comment("A list of items to log on common setup.")
 //            .defineListAllowEmpty("items", List.of("minecraft:iron_ingot"), () -> "", Config::validateItemName);
 
+    public static final ModConfigSpec.ConfigValue<Integer> SUN_TOTEM_TRIGGER_TIME = BUILDER
+            .comment("When to trigger the Sun Totem, if it's in a player's inventory.\nDefaults to 10 seconds after players wake up from their beds.")
+            .define("sunTotemTriggerTime", 200);
     static final ModConfigSpec SPEC = BUILDER.build();
 
     private static boolean validateItemName(final Object obj) {

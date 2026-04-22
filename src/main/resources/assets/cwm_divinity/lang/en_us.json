@@ -1,4 +1,6 @@
 {
     "item.cwm.god_wand.tooltip": "Do stuff",
-    "item.cwm.shift_tooltip": "Press [SHIFT] for information"
+    "item.cwm.shift_tooltip": "Press [SHIFT] for information",
+    "item.cwm_divinity.sun_totem": "Sun Totem",
+    "item.cwm_divinity.god_wand": "God Wand"
 }
