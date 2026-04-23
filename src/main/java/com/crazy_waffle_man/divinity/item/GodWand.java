@@ -1,5 +1,6 @@
 package com.crazy_waffle_man.divinity.item;
 
+import com.crazy_waffle_man.divinity.CWMDivinity;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.commands.AttributeCommand;
@@ -41,12 +42,8 @@ public class GodWand extends Item {
                             .getAttributes()
                             .getInstance(Attributes.MOVEMENT_SPEED)
             ).setBaseValue(0.0);
+            entity.addTag(CWMDivinity.MODID + ":doomed");
         }
         return true;
-    }
-
-    public static void tickDoomedEntities() {
-        //TODO Iterate through doomedEntities and drag them underground until their eyes are underground (suffocating)
-
     }
 }

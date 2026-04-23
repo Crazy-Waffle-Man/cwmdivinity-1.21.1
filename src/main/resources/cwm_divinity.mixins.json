@@ -2,7 +2,9 @@
   "required": true,
   "package": "com.crazy_waffle_man.divinity.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+    "LivingEntityMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   },
