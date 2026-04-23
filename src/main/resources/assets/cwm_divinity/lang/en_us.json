@@ -3,5 +3,8 @@
     "item.cwm.shift_tooltip": "Press [SHIFT] for information",
     "item.cwm_divinity.sun_totem": "Sun Totem",
     "item.cwm_divinity.god_wand": "God Wand",
-    "cwm_suntotem.networking_failed": "Something went wrong within the CWMDivinity networking logic for the Sun Totem.\\nPlease report this issue and attach latest.log."
+    "cwm_suntotem.networking_failed": "Something went wrong within the CWMDivinity networking logic for the Sun Totem.\\nPlease report this issue and attach latest.log.",
+    "cwm_divinity.configuration.sunTotemTriggerTime": "When does the Sun Totem trigger?",
+    "cwm_divinity.configuration.godWandParticlesPerTick": "God Wand particles/tick",
+    "cwm_divinity.configuration.godWandDoomedMobDescentRate": "Doomed mobs' speed"
 }
