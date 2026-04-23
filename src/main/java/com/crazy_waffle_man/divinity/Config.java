@@ -29,7 +29,14 @@ public class Config {
 
     public static final ModConfigSpec.ConfigValue<Integer> SUN_TOTEM_TRIGGER_TIME = BUILDER
             .comment("When to trigger the Sun Totem, if it's in a player's inventory.\nDefaults to 10 seconds after players wake up from their beds.")
-            .define("sunTotemTriggerTime", 200);
+            .defineInRange("sunTotemTriggerTime", 200, 0, 24000);
+
+    public static final ModConfigSpec.ConfigValue<Integer> GOD_WAND_PPT = BUILDER
+            .comment("How many particles (i.e. how detailed) should doomed mobs spawn each tick?\n(Lower value --> better performance but worse aesthetics)")
+            .defineInRange("godWandParticlesPerTick", 5, 1, 100);
+    public static final ModConfigSpec.ConfigValue<Double> GOD_WAND_DOOMED_MOB_DESCENT_RATE = BUILDER
+            .comment("Blocks per tick to move entities doomed by the God Wand downward")
+            .defineInRange("godWandDoomedMobDescentRate", 0.000125, 0, Double.MAX_VALUE);
     static final ModConfigSpec SPEC = BUILDER.build();
 
     private static boolean validateItemName(final Object obj) {
